@@ -9,7 +9,7 @@ xxxxxxxx      x
 x             x
 xxxx     xxxxxx
 x             x
-xxxxxx       xx
+xxxxxx        x
 x        xxxxxx
 x            Gx
 xxxxxxxxxxxxxSx

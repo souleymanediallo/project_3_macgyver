@@ -1,21 +1,36 @@
+from constantes import *
 from labyrinth import Labyrinth
+import pygame
+
+pygame.init()
+pygame.display.set_caption("Projet 3 : Aidez Macgyver à s'échapper !")
+window = pygame.display.set_mode((WINDOW_HEIGHT, WINDOW_WIDTH))
 
 laby = Labyrinth("map.txt")
-laby.show_labyrinth()
 
 while laby.mac_gyver.game:
-    direction = input("What direction ? : L, R, U, D > ")
-    if direction == "L":
-        laby.mac_gyver.move_to("L")
-    elif direction == "R":
-        laby.mac_gyver.move_to("R")
-    elif direction == "U":
-        laby.mac_gyver.move_to("U")
-    elif direction == "D":
-        laby.mac_gyver.move_to("D")
-    else:
-        print("Déplacement impossible")
+    ####################
+    # direction = input("What direction ? : L, R, U, D > ")
 
-    laby.show_labyrinth()
+    laby.show_labyrinth(window)
+    pygame.display.flip()
 
-print("========================= G A M E ========= O V E R ===============================")
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            laby.mac_gyver.game = False
+            pygame.quit()
+
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                laby.mac_gyver.move_to("L")
+            elif event.key == pygame.K_RIGHT:
+                laby.mac_gyver.move_to("R")
+            elif event.key == pygame.K_UP:
+                laby.mac_gyver.move_to("U")
+            elif event.key == pygame.K_DOWN:
+                laby.mac_gyver.move_to("D")
+            #else:
+               # print("Déplacement impossible")
+
+# print("========================= G A M E ========= O V E R ===============================")
+
