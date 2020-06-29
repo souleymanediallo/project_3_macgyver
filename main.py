@@ -9,9 +9,7 @@ window = pygame.display.set_mode((WINDOW_HEIGHT, WINDOW_WIDTH))
 laby = Labyrinth("map.txt")
 
 while laby.mac_gyver.game:
-    ####################
-    # direction = input("What direction ? : L, R, U, D > ")
-
+    # it's my labyrinth
     laby.show_labyrinth(window)
     pygame.display.flip()
 
@@ -29,8 +27,7 @@ while laby.mac_gyver.game:
                 laby.mac_gyver.move_to("U")
             elif event.key == pygame.K_DOWN:
                 laby.mac_gyver.move_to("D")
-            #else:
-               # print("Déplacement impossible")
+
 
 # print("========================= G A M E ========= O V E R ===============================")
 

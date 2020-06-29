@@ -4,6 +4,7 @@ import random
 
 
 class Labyrinth:
+    # structure of my class labyrinth
     def __init__(self, carte):
         self.carte = carte
         self.dico_laby = {"aiguille": 'A', "tube": 'T', "ether": 'E'}
@@ -12,6 +13,7 @@ class Labyrinth:
         self.mac_gyver = MacGyver(self.map)
 
     def load_labyrinth(self):
+        # load map txt
         with open(self.carte, "r") as laby:
             for line in laby.readlines():
                 line_n = []
@@ -21,6 +23,7 @@ class Labyrinth:
                 self.map.append(line_n)
         self.position_object()
 
+    # show labyrinth with objects (map)
     def show_labyrinth(self, window):
         number_ligne = 0
         for line in self.map:
@@ -51,7 +54,8 @@ class Labyrinth:
         n_columns = len(self.map[0])
         n_raws = len(self.map)
 
-        # placer les 3 objets en vérifiant si l'emplacement est vide (pas de mur, pas d'objets)
+        # if is it OK ? position 3 objects
+        # check wall and objects
         for value in self.dico_laby.values():
             random_x = random.randint(0, n_columns - 1)
             random_y = random.randint(0, n_raws - 1)
