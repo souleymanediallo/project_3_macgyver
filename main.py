@@ -1,15 +1,22 @@
-from constantes import *
-from labyrinth import Labyrinth
 import pygame
+import constantes as cst
+from labyrinth import Labyrinth
+
 
 pygame.init()
+"""
+import module pygame for manage destination MacGyver.
+"""
 pygame.display.set_caption("Projet 3 : Aidez Macgyver à s'échapper !")
-window = pygame.display.set_mode((WINDOW_HEIGHT, WINDOW_WIDTH))
+window = cst.pygame.display.set_mode((cst.WINDOW_HEIGHT, cst.WINDOW_WIDTH))
 
 laby = Labyrinth("map.txt")
 
 while laby.mac_gyver.game:
-    # it's my labyrinth
+    """
+    I choose module pygame for my game
+    I can to change my destination (Top, Left, Up or Right) 
+    """
     laby.show_labyrinth(window)
     pygame.display.flip()
 
@@ -28,6 +35,4 @@ while laby.mac_gyver.game:
             elif event.key == pygame.K_DOWN:
                 laby.mac_gyver.move_to("D")
 
-
-# print("========================= G A M E ========= O V E R ===============================")
-
+# print("========= G A M E ========= O V E R ===============")

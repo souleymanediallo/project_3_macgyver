@@ -1,10 +1,13 @@
-from constantes import *
-from macgyver import MacGyver
 import random
+import constantes as cst
+from macgyver import MacGyver
 
 
 class Labyrinth:
-    # structure of my class labyrinth
+    """
+    structure of my class labyrinth
+    load and show labyrinth with my objects
+    """
     def __init__(self, carte):
         self.carte = carte
         self.dico_laby = {"aiguille": 'A', "tube": 'T', "ether": 'E'}
@@ -13,7 +16,7 @@ class Labyrinth:
         self.mac_gyver = MacGyver(self.map)
 
     def load_labyrinth(self):
-        # load map txt
+        """ load map txt """
         with open(self.carte, "r") as laby:
             for line in laby.readlines():
                 line_n = []
@@ -23,30 +26,30 @@ class Labyrinth:
                 self.map.append(line_n)
         self.position_object()
 
-    # show labyrinth with objects (map)
     def show_labyrinth(self, window):
+        """ show labyrinth with objects (map) """
         number_ligne = 0
         for line in self.map:
             number_case = 0
             for element in line:
-                x = number_case * SQUARE_SIZE
-                y = number_ligne * SQUARE_SIZE
+                x = number_case * cst.SQUARE_SIZE
+                y = number_ligne * cst.SQUARE_SIZE
                 if element == "M":
-                    window.blit(MACGYVER, (x, y))
+                    window.blit(cst.MACGYVER, (x, y))
                 elif element == "S":
-                    window.blit(EXIT, (x, y))
+                    window.blit(cst.EXIT, (x, y))
                 elif element == "x":
-                    window.blit(WALL, (x, y))
+                    window.blit(cst.WALL, (x, y))
                 elif element == "G":
-                    window.blit(GUARDIAN, (x, y))
+                    window.blit(cst.GUARDIAN, (x, y))
                 elif element == "A":
-                    window.blit(OBJECT1, (x, y))
+                    window.blit(cst.OBJECT1, (x, y))
                 elif element == "E":
-                    window.blit(OBJECT2, (x, y))
+                    window.blit(cst.OBJECT2, (x, y))
                 elif element == "T":
-                    window.blit(OBJECT3, (x, y))
+                    window.blit(cst.OBJECT3, (x, y))
                 elif element == " ":
-                    window.blit(FLOOR, (x, y))
+                    window.blit(cst.FLOOR, (x, y))
                 number_case += 1
             number_ligne += 1
 

@@ -17,9 +17,6 @@ MACGYVER = pygame.image.load("images/macgyver.png")
 EXIT = pygame.image.load("images/exit.png")
 FLOOR = pygame.image.load("images/floor.png")
 
-
 OBJECT1 = pygame.image.load("images/object1.png")
 OBJECT2 = pygame.image.load("images/object2.png")
 OBJECT3 = pygame.image.load("images/object3.png")
-
-
