@@ -1,7 +1,6 @@
-import pygame
+import pygame as pg
 
-pygame.display.init()
-pygame.display.set_mode()
+pg.init()
 
 # WINDOW PARAMETERS
 NUMBER_RAW = 15
@@ -11,12 +10,12 @@ WINDOW_HEIGHT = NUMBER_RAW * SQUARE_SIZE
 WINDOW_WIDTH = NUMBER_COLUMN * SQUARE_SIZE
 
 # LOAD PICTURES
-WALL = pygame.image.load("images/wall.png")
-GUARDIAN = pygame.image.load("images/gardian.png")
-MACGYVER = pygame.image.load("images/macgyver.png")
-EXIT = pygame.image.load("images/exit.png")
-FLOOR = pygame.image.load("images/floor.png")
+WALL = pg.image.load("images/wall.png")
+GUARDIAN = pg.image.load("images/gardian.png")
+MACGYVER = pg.image.load("images/macgyver.png")
+EXIT = pg.image.load("images/exit.png")
+FLOOR = pg.image.load("images/floor.png")
 
-OBJECT1 = pygame.image.load("images/object1.png")
-OBJECT2 = pygame.image.load("images/object2.png")
-OBJECT3 = pygame.image.load("images/object3.png")
+OBJECT1 = pg.image.load("images/object1.png")
+OBJECT2 = pg.image.load("images/object2.png")
+OBJECT3 = pg.image.load("images/object3.png")

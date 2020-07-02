@@ -23,3 +23,7 @@ l’import de mon fichier Labyrinth et les constantes. Ce fichier me permet de g
 * Versionner le code en utilisant Git et le publier sur Github.
 * Respecter les bonnes pratiques de la PEP 8 et développer dans un environnement virtuel utilisant Python 3
 * Ecrire en anglais : nom des variables, commentaires, fonctions...
+
+#### Plus d'info
+* /usr/bin/venv python3
+* coding : utf-8

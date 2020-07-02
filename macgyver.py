@@ -3,9 +3,11 @@ class MacGyver:
     structure of my class MacGyver
     create and fill this list when MG encounters an object (check collision method)
     """
-    def __init__(self, map):
+    def __init__(self, map_laby):
         self.game = True
-        self.map = map
+        self.map = map_laby
+        self.position_x = None
+        self.position_y = None
         self.search_m()
         self.list_objects = []
 
@@ -25,7 +27,7 @@ class MacGyver:
         self.map[self.position_y][self.position_x] = item
 
     def move_to(self, go_to):
-        """ Positionner MacGyver and destination (Top, Left, Bottom or Right) """
+        """ Position MacGyver and destination (Top, Left, Bottom or Right) """
         self.move_m(' ')  # replace macgyver with an empty box
         if go_to == "L":
             if self.check_collision(self.position_y, self.position_x - 1):

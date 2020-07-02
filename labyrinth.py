@@ -1,4 +1,5 @@
 import random
+
 import constantes as cst
 from macgyver import MacGyver
 
@@ -54,6 +55,7 @@ class Labyrinth:
             number_ligne += 1
 
     def position_object(self):
+        """ position 3 objects if item is empty """
         n_columns = len(self.map[0])
         n_raws = len(self.map)
 
